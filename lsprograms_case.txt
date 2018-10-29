@@ -1,0 +1,7 @@
+"1.GetAttachment",MOUSECLICK
+"2.Activate",MOUSECLICK
+"3.DoVerb",MOUSECLICK
+"4.EmbedObject(OLE)",MOUSECLICK
+"5.GetEmbeddedObject(OLE)",MOUSECLICK
+"6.GetObject",MOUSECLICK
+"7.CreateObject",MOUSECLICK

@@ -1,0 +1,7 @@
+"1.CreateReplyMessage",MOUSECLICK
+"2.Send",MOUSECLICK
+"3.OpenCloseLog",MOUSECLICK,25
+"4.LogAction(to mail message)",MOUSECLICK,25
+"5.LogError(to mail message)",MOUSECLICK,20
+"6.Forward",MOUSECLICK
+"7.Send",MOUSECLICK

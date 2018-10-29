@@ -1,0 +1,8 @@
+"1.ExtracFile",MOUSECLICK
+"2.LogAction(file)",MOUSECLICK
+"3.LogError(file)",MOUSECLICK
+"4.OpenFileLog",MOUSECLICK
+"5.EmbeddedObject(file)",MOUSECLICK
+"6.EmbeddedObject(OLE)",MOUSECLICK
+"7.GetEmbeddedObject(OLE)",MOUSECLICK
+"8.CreateLog",MOUSECLICK

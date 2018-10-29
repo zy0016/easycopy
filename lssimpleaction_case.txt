@@ -1,0 +1,9 @@
+"Copyto database",MOUSECLICK
+"Delete from database",MOUSECLICK
+"Modify field",MOUSECLICK
+"Modify Fields by Form",MOUSECLICK
+"Reply to sender",MOUSECLICK
+"Send Document",MOUSECLICK
+"Send Mail Message",MOUSECLICK
+"Send Newsletter Summary",MOUSECLICK
+"@Function(@MailSend)",MOUSECLICK
