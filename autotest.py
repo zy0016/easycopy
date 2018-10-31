@@ -108,13 +108,7 @@ def ReadTestCaseFile(testcasefile):
 			print(casename," result:",res)
 			
 			resultfile = open(outputfilename,'a+')
-			resstr = casename + " result:"
-			if res == True:
-				resstr = resstr + " True\n"
-			else:
-				resstr = resstr + " False\n"
-
-			resultfile.write(resstr)
+			resultfile.write(casename + " result:" + str(res) + "\n")
 			resultfile.close()
 			
 			time.sleep(timedefault)

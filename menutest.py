@@ -39,7 +39,7 @@ def doactions(casename,key1num,actiontime):
 	m.click(actions_x,actions_y,1,1)
 
 	for i in range(int(key1num)):
-		print(">>>>>>>>>>>>press down key")
+		time.sleep(1)
 		k.press_key(k.down_key)
 		k.release_key(k.down_key)
 		time.sleep(1)
@@ -55,7 +55,6 @@ def doactions(casename,key1num,actiontime):
 		EnumWindows(foo,0)
 		lt = [t for t in titles if t]
 		lt.sort()
-
 		titles.clear()
 		while True:
 			time.sleep(1)
@@ -89,8 +88,8 @@ def doactions(casename,key1num,actiontime):
 			EnumWindows(foo,0)
 			lsw = [t for t in titles if t]
 			lsw.sort()
-			for i in lsw:
-				print(i)
+			# for i in lsw:
+				# print(i)
 
 			if "IBM Notes" in lsw or "Agent Log" in lsw:
 				print(">>>>>>>>>>>>>>>find IBM Notes dialog")
@@ -111,8 +110,6 @@ def doactions(casename,key1num,actiontime):
 
 def ReadTestCaseFile(testcasefile):
 	outputfilename = "menu_result.txt"
-	m = PyMouse()
-	k = PyKeyboard()
 	
 	resultfile = open(outputfilename,'a+')
 	resultfile.write(testcasefile + "\n")
@@ -140,28 +137,22 @@ def ReadTestCaseFile(testcasefile):
 					actiontime = int(param3)
 					print("set new timer:",str(actiontime))
 
+			
 			key1 = arr[1].split("=")[1]
 			res = doactions(casename,key1,actiontime)
 			
 			print(casename," result:",res," key1:",key1)
 			
 			resultfile = open(outputfilename,'a+')
-			resstr = casename + " result:"
-			if res == True:
-				resstr = resstr + " True\n"
-			else:
-				resstr = resstr + " False\n"
-
-			resultfile.write(resstr)
+			resultfile.write(casename + " result:" + str(res) + "\n")
 			resultfile.close()
 			
 			time.sleep(timedefault)
-
-def main():		
+			
+def main():
 	print("start at:", ctime())
 	sourcepath = input("Enter your test case file path: ")
 	m = PyMouse()
-	k = PyKeyboard()
 	x = 100
 	y = 200
 	m.move(x,y)
