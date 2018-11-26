@@ -90,10 +90,11 @@ def threadfunc1():
 	
 def sendemail():
 	attachment_filename = 'debug.py'
+	attachment_filename2='easycopy.py'
 	sender = 'zyabc12345@163.com'
 	passWord = 'Z#y04690433{22>?'
 	mail_host = 'smtp.163.com'
-	receivers = ['zy0016@yeah.net']
+	receivers = ['zhaoyong@pnp-hcl.com']
 
 	msg = MIMEMultipart()
 	msg['Subject'] = "Title for python 2"
@@ -109,6 +110,15 @@ def sendemail():
 		encoders.encode_base64(mime)
 		msg.attach(mime)
 
+	with open(attachment_filename2, 'rb') as f:
+		mime = MIMEBase('txt', 'txt', filename=attachment_filename2)
+		mime.add_header('Content-Disposition', 'attachment', filename=attachment_filename2)
+		mime.add_header('Content-ID', '<0>')
+		mime.add_header('X-Attachment-Id', '0')
+		mime.set_payload(f.read())
+		encoders.encode_base64(mime)
+		msg.attach(mime)
+		
 	try:
 		s = smtplib.SMTP_SSL(mail_host, 465)
 		s.set_debuglevel(1)
@@ -124,7 +134,7 @@ def sendemail():
 	
 	
 def main():
-	print("start")
+	print("start")	
 	sendemail()
 	# threadfunc1()
 	# sourcepath = input("Enter your test case file path: ")
