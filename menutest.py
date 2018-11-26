@@ -25,18 +25,30 @@ def foo(hwnd,nouse):
 def doactions(casename,key1num,actiontime):
 	print("Run case:",casename," key1num:",key1num," actiontime:",actiontime)
 	othertime = 0
-	m = PyMouse() 
+	
 	k = PyKeyboard()
-	actions_x = 170
-	actions_y = 25
-	m.move(actions_x,actions_y)
-	m.click(actions_x,actions_y,1,1)
+	
 	time.sleep(1)
+	k.press_key(k.alt_l_key)
+	time.sleep(1)
+	k.release_key(k.alt_l_key)
+	
+	time.sleep(1)
+	menuindex = 4
+	for i in range(int(menuindex)):
+		k.press_key(k.right_key)
+		k.release_key(k.right_key)
 
-	actions_x = 170
-	actions_y = 250
-	m.move(actions_x,actions_y)
-	m.click(actions_x,actions_y,1,1)
+	k.press_key(k.enter_key)
+	k.release_key(k.enter_key)
+
+	menuindex = 9
+	for i in range(int(menuindex)):
+		k.press_key(k.down_key)
+		k.release_key(k.down_key)
+
+	k.press_key(k.enter_key)
+	k.release_key(k.enter_key)
 
 	for i in range(int(key1num)):
 		time.sleep(1)
