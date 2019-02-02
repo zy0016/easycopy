@@ -28,8 +28,8 @@ def removefolder(comlist):
 	i = 0
 	timercount = 1
 	lslen = len(comlist)
-	remaincount = 2
-	print("Remove " + str(lslen - remaincount) + " folders.")
+	remaincount = 3
+	print("It will remove " + str(lslen - remaincount) + " folders.")
 	for x in comlist[:-remaincount]:
 		com1 = x + " --recursive"
 		print(str(i) + " " + com1)
