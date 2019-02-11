@@ -9,6 +9,8 @@ import threading
 
 s3mainfolder="s3://aws-hcl-scn-opendom/"
 folderlist = ["od-automation-staging","od-populator-staging","od-publisher-staging","od-prebuild-staging"]
+# folderlist = ["od-automation","od-populator","od-publisher"]
+# folderlist = ["od-automation-staging","od-populator-staging","od-publisher-staging","od-prebuild-staging","od-automation","od-populator","od-publisher"]
 
 def savesubfoldertofile(mainfolder,subfolder):
 	command = "aws s3 ls " + mainfolder + subfolder + "/>" + subfolder + ".txt"
@@ -43,7 +45,6 @@ def removefolder(comlist,subfolder):
 			time.sleep(timercount)
 
 def action(folder):
-	# time.sleep(1)
 	print("\nHandle the " + folder + "\n")
 	savesubfoldertofile(s3mainfolder,folder)
 	commandlist = readfileandhandle(s3mainfolder,folder)
