@@ -46,6 +46,7 @@ def main():
 	savesubfoldertofile(s3mainfolder,subfolderstr)
 	commandlist = readfileandhandle(s3mainfolder,subfolderstr)
 	removefolder(commandlist)
+	os.remove(resultfile)
 	print("over")
 
 if __name__ == '__main__':
