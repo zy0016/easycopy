@@ -22,7 +22,7 @@ def downloadfiles(filelist,subproject,foldername,desfolder):
 		for line in f:
 			strall = line.strip()
 			filename = strall.split(" ")[-1]
-			command = "aws s3 cp " + s3mainfolder + subproject + "/" + foldername + "win32/" + filename + " " + desfolder
+			command = "aws s3 cp " + s3mainfolder + subproject + "/" + foldername + "win64/" + filename + " " + desfolder
 			print(command)
 			os.system(command)
 			
@@ -34,7 +34,7 @@ def main(argv):
 	os.system(command1)
 	
 	lastbuilditem = getlastbuilditem(folderlistfile)
-	command2 = "aws s3 ls " + s3mainfolder + subproject + "/" + lastbuilditem + "win32/>" + filelistfile
+	command2 = "aws s3 ls " + s3mainfolder + subproject + "/" + lastbuilditem + "win64/>" + filelistfile
 	print(command2)
 	os.system(command2)
 	

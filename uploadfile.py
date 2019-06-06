@@ -37,7 +37,7 @@ def main(argv):
 	print("timestamp:" + timestamp)
 	for id in filenamelist:
 		if os.path.isfile(id):
-			command = "aws s3 cp " + id + " " + s3mainfolder + subproject + "/" + projecttype + timestamp + "/win32/"
+			command = "aws s3 cp " + id + " " + s3mainfolder + subproject + "/" + projecttype + timestamp + "/win64/"
 			print(command)
 			os.system(command)
 		else:

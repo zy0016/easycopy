@@ -34,7 +34,7 @@ def main(argv):
 				if strall.find("FAIL") != -1:
 					if strall.find(".html") != -1:
 						# for title
-						strresult = "<table border=\"1\"><tbody><tr><th scope=\"row\">Test Case</th><td><b>Result</b></td><td><b>Execution Time</b></td><td><b>Start Time</b></td>" + strall + "</td></tr></tbody></table><table border=\"1\"><tbody>\n"
+						strresult = "<hr><table border=\"1\"><tbody><tr><th scope=\"row\">Test Case</th><td><b>Result</b></td><td><b>Execution Time</b></td><td><b>Start Time</b></td>" + strall + "</td></tr></tbody></table><table border=\"1\"><tbody>\n"
 					else:
 						if bAddTableTitle == True:
 							strresult = strresult + strall + "\r\n"
