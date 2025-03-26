@@ -1,0 +1,30 @@
+  SELECT
+	a.C_BONDCODE 产品代码,
+	a.C_BONDFULLNAME 产品全称,
+	CASE
+		WHEN t.C_BUSINFLAG = '50' THEN '产品成立'
+		WHEN t.C_BUSINFLAG = '43' THEN '产品回售'
+		WHEN t.C_BUSINFLAG = '44' THEN '产品赎回'
+		WHEN t.C_BUSINFLAG = '45' THEN '分期还本'
+		ELSE '其他'
+	END 业务类型,
+	 totalbalance 本周变更规模
+FROM
+	(
+	SELECT
+		t.C_FUNDCODE,
+		t.C_BUSINFLAG,
+		sum(t.F_OCCURBALANCE) totalbalance
+	FROM
+		ta4.TSHARECURRENTS t
+	WHERE
+		t.C_BUSINFLAG IN ('50', '43', '44', '45')
+		AND t.D_REQUESTDATE >= '20240405'
+		AND t.D_REQUESTDATE < '20240411'
+	GROUP BY
+		t.C_FUNDCODE ,
+		t.C_BUSINFLAG ) t,
+	ta4.tbondinfo a
+WHERE
+	t.C_FUNDCODE = a.C_BONDCODE
+ AND a.C_PRODUCTTYPE = '3';
